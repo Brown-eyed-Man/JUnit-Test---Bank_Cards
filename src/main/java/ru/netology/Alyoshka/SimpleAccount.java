@@ -18,7 +18,7 @@ public class SimpleAccount extends Account {
 
     @Override
     public boolean pay(long amount) {
-        if (amount <= balance) {
+        if (amount <= balance && amount > 0) {
             balance -= amount;
             System.out.println("Покупка прошла успешно!");
             return true;

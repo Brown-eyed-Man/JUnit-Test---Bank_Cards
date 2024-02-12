@@ -9,7 +9,7 @@ public class CreditAccount extends Account {
 
     @Override
     public boolean add(long amount) {
-        if (balance + amount <= 0) {
+        if (balance + amount <= 0 && amount > 0) {
             balance += amount;
             System.out.println("Вы успешно пополнили баланс");
             return true;
@@ -21,7 +21,7 @@ public class CreditAccount extends Account {
 
     @Override
     public boolean pay(long amount) {
-        if (balance - amount >= -creditLimit) {
+        if (balance - amount >= -creditLimit && amount > 0) {
             balance -= amount;
             System.out.println("Покупка прошла успешно!");
             return true;
