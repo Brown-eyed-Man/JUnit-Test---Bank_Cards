@@ -1,13 +1,19 @@
 package ru.netology.Alyoshka;
 
-import org.junit.jupiter.api.Assertions;
+import org.junit.jupiter.api.*;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.CsvSource;
 
 
 class MainTest {
-    CreditAccount creditCard = new CreditAccount(50_000);
-    SimpleAccount debitCard = new SimpleAccount();
+    private CreditAccount creditCard;
+    private SimpleAccount debitCard;
+
+    @BeforeEach
+    public void setUp() {
+        creditCard = new CreditAccount(50_000);
+        debitCard = new SimpleAccount();
+    }
 
     @ParameterizedTest
     @CsvSource(value = {
